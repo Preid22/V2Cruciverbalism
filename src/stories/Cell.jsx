@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
-function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick}) {
+function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick }) {
+  return (
+    <svg width="50" height="50">
+      <rect
+        width="40"
+        height="40"
+        style={{ fill: isBlack ? "black" : "white" }}
+      />
+    </svg>
+  );
+}
 
-    return (
-      <svg width='50' height='50'>
-       <rect width='40' height='40' style={{fill:isBlack ? 'black' : 'white'}} />
-       </svg>
-    );
-};
-
-
-export default Cell
+export default Cell;
 
 /*
 Functional component 'Cell' takes the following props:
