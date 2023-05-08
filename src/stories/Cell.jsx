@@ -2,11 +2,16 @@ import React from "react";
 
 function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick }) {
   return (
-    <svg width="50" height="50">
+    <svg>
       <rect
+        x='2'
+        y='2'
         width="40"
         height="40"
-        style={{ fill: isBlack ? "black" : "white" }}
+        rx='5'
+        stroke={isSelected ? 'blue' : 'yellow'}
+        stroke-width='2'
+        fill= {isBlack ? "black" : "white"}
       />
     </svg>
   );
@@ -23,3 +28,5 @@ Functional component 'Cell' takes the following props:
     - 'isSelected' (boolean): Indicates whether the cell is currently selected or not
     - 'handleClick' (function): The function that is called when cell is clicked
 */
+
+//style={{ fill: isBlack ? "black" : "white" }}
