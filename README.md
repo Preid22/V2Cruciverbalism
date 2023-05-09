@@ -17,4 +17,9 @@ I'm integrating Storybook into the project and will try looking at it from a com
 
 \*\* 5/7/23
 
-Quick sesh, feeling pretty optimistic about Storybook. See how it goes. Added a couple small tweaks nothing big would like to maybe see the cell functioning properly this week. Fingers crossed.
+Quick sesh, feeling pretty optimistic about Storybook. See how it goes. Added a couple small tweaks nothing big (played around w/ stroke color, styling & controls) would like to maybe see the cell functioning properly this week. Fingers crossed.
+
+
+** 5/8/23
+
+Goal this evening is to get some data introduced and into the cell.
