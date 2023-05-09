@@ -19,7 +19,8 @@ I'm integrating Storybook into the project and will try looking at it from a com
 
 Quick sesh, feeling pretty optimistic about Storybook. See how it goes. Added a couple small tweaks nothing big (played around w/ stroke color, styling & controls) would like to maybe see the cell functioning properly this week. Fingers crossed.
 
-
-** 5/8/23
+\*\* 5/8/23
 
 Goal this evening is to get some data introduced and into the cell.
+
+Going to stick with the way it was done in the last version, using fetch. ChatGPT suggested something that used React Context but it seemed bad (lot's of repetition). Going to try and implement it without looking at the old code, can get online references tho. Will need to use useEffect and fetch.
