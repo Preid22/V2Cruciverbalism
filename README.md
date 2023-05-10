@@ -2,8 +2,7 @@
 
 \*\* 5/4/23
 
-Starting fresh from the ground up, see how it goes this time. Using ChatGPT pretty extensivley, hopefully
-can be savvy enough about it's use that it can help and not hinder. I've got the basic structure together and have started to add components. Will try to get a little done on the cell component tonight but probably not much more than that.
+Starting fresh from the ground up, see how it goes this time. I've got the basic structure together and have started to add components. Will try to get a little done on the cell component tonight but probably not much more than that.
 
 \*\* 5/5/23
 
