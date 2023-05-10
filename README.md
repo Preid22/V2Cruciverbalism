@@ -25,3 +25,7 @@ Goal this evening is to get some data introduced and into the cell.
 Going to stick with the way it was done in the last version, using fetch. ChatGPT suggested something that used React Context but it seemed bad (lot's of repetition). Going to try and implement it without looking at the old code, can get online references tho. Will need to use useEffect and fetch.
 
 Leaning on old code a little more than had hoped but oh well. Remembering that this (data handling) was where the wheels kind of started to come off last time, take it slow and keep it together. Left off with puzzleMap copied over still need to get the other helper funcs.
+
+** 5/9/23
+
+Refreshing my understanding of the 'server' and how that fits in. Feeling a bit better abt it than where I left off yesterday.
