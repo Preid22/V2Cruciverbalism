@@ -26,6 +26,10 @@ Going to stick with the way it was done in the last version, using fetch. ChatGP
 
 Leaning on old code a little more than had hoped but oh well. Remembering that this (data handling) was where the wheels kind of started to come off last time, take it slow and keep it together. Left off with puzzleMap copied over still need to get the other helper funcs.
 
-** 5/9/23
+\*\* 5/9/23
 
 Refreshing my understanding of the 'server' and how that fits in. Feeling a bit better abt it than where I left off yesterday.
+
+\*\* 5/10/23
+
+Knocking the cobwebs out of the helper funcs in newGameManager

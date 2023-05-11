@@ -34,6 +34,14 @@ function generateClueArray(clues) {
   });
 }
 
+function generateClueMap(clues) {
+    return clues.reduce((accum, cur) => {
+      const [num, clueString] = cur.split(".");
+      accum[num] = clueString;
+      return accum;
+    }, {});
+  }
+
 /* 
  - ln. 1: declare function getCrosswordData(date) which takes in a date,
  spreads the YEAR, MONTH, and DAY vals to named variables and then brings in
@@ -44,14 +52,24 @@ function generateClueArray(clues) {
  in via require, and outputs an object, p, which contains all the fields in
  lns. 9-23
 
- - ln. 27: a helper function which is used inside of the puzzlemap func to generate
- an array containing the clues and their corresponding numbers, split into individual
+ - ln. 27: a helper function, generateClueArray, which is used inside of the puzzlemap func
+  to generate an array containing the clues and their corresponding numbers, split into individual
  strings. It takes in clues.across or clues.down from the puzzle object and maps over it,
- splitting the original format ( "1. Attention getter" ) into a more usable one
+ splitting the original format ( "1. Attention getter" ) and assigning the vars
+  into a more usable object format
  ( {
     clueString: "Attention getter",
     num: "1"
  } )
+
+ Within the puzzleMap func, generateClueArray takes in either puzzle.clues.down or
+ puzzle.clues.across and returns an array containing objects with properties for the 
+ clue as well as the number, this array is the property for p.acrossCluesArr and 
+ p.downCluesArr.
+
+ - ln. 37 is similar in that it handles the clue data, but instead of outputting an array
+ containing objects with the clueString and number, it outputs an object that contains
+ fields with the number as the key and the clueString as the property.
 
 
 */
