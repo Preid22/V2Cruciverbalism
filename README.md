@@ -1,5 +1,13 @@
 # V2Cruciverbalism
 
+This is a crossword app based loosely on the NYT online puzzle that uses an archive of historical NYT game data.
+
+It will be built with React, using Vite and Storybook for component development.
+
+It is intended to be a single page app, a basic game board that displays the puzzle and clues, with a modal window to collect user and game data and initiate the game.
+
+Initial build will be single player, adding functionality for profile creation, record keeping, and multiplayer modes (turn based, competetive, cooperative?)
+
 \*\* 5/4/23
 
 Starting fresh from the ground up, see how it goes this time. I've got the basic structure together and have started to add components. Will try to get a little done on the cell component tonight but probably not much more than that.
