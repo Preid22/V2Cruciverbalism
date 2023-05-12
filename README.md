@@ -41,3 +41,9 @@ Refreshing my understanding of the 'server' and how that fits in. Feeling a bit 
 \*\* 5/10/23
 
 Knocking the cobwebs out of the helper funcs in newGameManager
+
+\*\* 5/11/23-5/12/23
+
+Short evening sesh 5/11, didn't do a whole lot but reviewed helper funcs in newGameManager.
+
+5/12 I'd like to really tighten up my understanding of the Express server, newGameManager, and the process of bringing data in.

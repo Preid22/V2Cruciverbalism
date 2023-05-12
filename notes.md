@@ -1,3 +1,6 @@
+  #newGameManager helper funcs
+  ----------------------------
+  
     * The function generateClueArray takes in an object (puzzle, written as clues in the func) and returns an array of objects, each with two properties; clueString and num (the corresponding first cell number.) This array is formed using .map(). Because .map() outputs an array we return clues.map(). The function run on each element by .map iterates over the array of clue strings ("1. Attention getter") and at each one declares vars num and clueString, .splits the clue arg and assigns those to num and clueString via de-structuring. Then, an object containing properties num and clueString is returned which outputs with the necessary vals.
 A function that takes in the CW JSON and outputs an array containing objects that have fields for num and clueString
 function generateClueArray(clues){
@@ -56,3 +59,18 @@ accum[num] = clueString;
 return accum;
 },{})
 }
+
+
+
+#Express routing
+----------------
+
+- Had some confusion surrounding the relationship btwn newGameManager, the express routing in index.js, and how that works within the context of the app.
+
+Questions/points of confusion:
+    - What is require?
+      - Require is a built in function of Node.js that imports functions, objects, or values from other files or modules in the application.
+      - When require is called it is given a file path and it returns the exported objects from that path, in order for require to work the target file MUST have the desired code exported
+    ** What I think is happening: in newGameManager we have several functions defined. Only one returns the data object (getCrossWordData) and the rest are helper funcs.
+    When we write out *exports.getCrossWordData*, exports is an object so .getCrossWordData creates a property with that name in the exports object and with *exports.getCrossWordData = getCrossWordData* we assign the function getCrossWordData to that exports object property and it can be called outside of the file.
+        Then, in index.js we use *require* to pull in "./newGameManager". Since we have assigned getCrossWordData to the exports object in newGameManager we can reference it using a destructuring assignment. We use {curly braces} to destructure the object and by creating a const variable { getCrossWordData } we extract that particular function from the exported object and simultaniously assign it to a variable, getCrossWordData, in the current scope (express server in index.js)
