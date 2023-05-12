@@ -32,7 +32,7 @@ function generateClueArray(clues) {
       clueString,
     };
   });
-}
+};
 
 function generateClueMap(clues) {
     return clues.reduce((accum, cur) => {
@@ -40,7 +40,21 @@ function generateClueMap(clues) {
       accum[num] = clueString;
       return accum;
     }, {});
-  }
+  };
+
+  function generateCells(letters, size) {
+    return letters.map((letter, index) => {
+    const row = Math.floor(index / size); //on first row index is < size, > on subsequent rows so dividing gets us row value
+    const column = index % size;
+    const letterOb = {};
+    letterOb.letter = letter;
+    letterOb.row = row;
+    letterOb.column = column;
+    return letterOb;
+    });
+    }
+
+exports.getCrosswordData = getCrosswordData;
 
 /* 
  - ln. 1: declare function getCrosswordData(date) which takes in a date,
