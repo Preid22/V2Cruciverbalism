@@ -46,4 +46,11 @@ Knocking the cobwebs out of the helper funcs in newGameManager
 
 Short evening sesh 5/11, didn't do a whole lot but reviewed helper funcs in newGameManager.
 
-5/12 I'd like to really tighten up my understanding of the Express server, newGameManager, and the process of bringing data in.
+\*\* 5/12
+
+I'd like to really tighten up my understanding of the Express server, newGameManager, and the process of bringing data in.
+
+\*\* 5/26/23
+
+Went in with intention to get some work done with components - Sketch out a framework and get some things taking form in Storybook. Ended up getting derailed onto Express and the server but it felt like a productive digression. I feel like I'm better grasping the way the whole OBJECT ORIENTED ecosystem works and I feel much better in my understanding of how the Express based routing works in the app. I feel I improved my understanding of - The distinction between a route definition (the 'whole' route, so to speak, including the request method, the path, and the handler func) and the route path (the actual path as it is written in the route definition) - The request and response objects and their use in the handler func - The distinction of serving static files
+Overall feeling like things are clicking better but I'm apprehensive about tackling the grid and cells and it feels like a bit of intentional stalling. Need to make an intentional push to get into components and embrace the struggle.

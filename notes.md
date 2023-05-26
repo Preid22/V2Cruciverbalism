@@ -91,3 +91,103 @@ Then, in index.js we use *require\* to pull in "./newGameManager". Since we have
       - app.use mounts a specified middleware function
 
   -
+
+** DIGRESSION **
+
+On useEffect: in this context (Game component) useEffect is called to bring in our game data. In the callback function we use fetch, and this provides us with our 'effect' (the data is fetched and we can use it). We call useEffect with an empty dependancy array after the callback arg so that the effect is only called once on the initial mount.
+
+&&& VOCAB/GLOSSARY &&&
+
+_<-Express>_
+
+EXPRESS is a framework that works ontop of Node.js to simplify app and API development. It is primarily used for developing server side applications and APIs. In the context of this project it is being used to set up a server to listen for requests and respond with data. There are other ways to use EXPRESS but I will mostly limit the scope to what I'm using here.
+In this case we are making use of Express' capabilities to:
+
+- Define ROUTES
+- Handle HTTP requests
+- Generate responses
+  ? Static file serving: crossword data?
+  ? App configuration: (port, environment variable)
+
+  I believe that Express will also serve as the functional backend of the application, need to get a bettter handle on this.
+
+_<-Express/Routing>_
+
+- ROUTING refers to how an application will respond to a client's REQUEST to a specified endpoint. The REQUEST will always be a URL(path) and a specified HTTP request method.
+- ROUTES will take the following structure:
+
+  **app.METHOD(PATH, HANDLERfunc)** ---> app.get('/greeting', (req, res) => {
+  res.send('Hi!');
+  };
+  );
+  ^ Where app is the instance of Express, METHOD is an HTTP request method, PATH is a defined server path and HANDLER is the supplied function to be executed when the route is matched. In this case a callback function that uses the req
+
+  _<-Request/Response Objects - (req, res)>_
+
+  - Req and Res objects are common idioms across web frameworks, and are not just used in Express. They are used to represent the HTTP REQUEST sent TO and the RESPONSE FROM the SERVER. They appear as the first two args in the callback function of a route handler (req, res).
+
+    - REQ is an object that represents the incoming HTTP request.
+    - It contains several properties that describe the request, such as:
+
+      - query string (?name=John)
+      - params (/users/:id)
+      - body (data from a POST request)
+      - Many more but these are some of the basics
+
+    - RES is an object that represents the response that our Express app sends when it recieves an HTTP request.
+    - The RES object has several methods that can be used to send a response to the client, the most common are:
+      - res.send() - sends a response of various types (string, object, array, etc.)
+      - res.sendFile() - sends a file as an octet stream
+      - _res.json() - sends a JSON response_
+      - res.render() - renders a view template
+
+  _<...Request/Response Objects>_
+
+  _<-Route path>_
+
+  - ROUTE PATH refers to the URL PATTERN that a route SHOULD MATCH. It defines the specific URL/URL pattern that the server should listen for when HANDLING A REQUEST.
+
+  - The ROUTE PATH is a component of the ROUTE DEFINITION ( see below )
+    A route can contain STATIC and DYNAMIC segments, static segments remain the same for all requests but dynamic segments are placeholders that capture variable values from the incoming request URL.
+
+    \*STATIC path:
+    app.get('/home', (req, res) => {
+    // Route handler for requests to '/home'
+    });
+    ^ this route will ONLY match requests to '/home', nothing else, '/home' is the PATH
+
+    \*DYNAMIC path:
+    app.get('/users/:id', (req, res) => {
+    // Route handler for requests to '/users/:id'
+    });
+    ^ this route will match requests to '/users/1', '/users/2', 'users/3', etc. The ':' means that the VALUE of that segment will be assigned as a parameter, accessible through req.params (req.params.id in this case). '/users/:id' is the PATH.
+
+  _<...Route path>_
+
+  _<-Route definition>_
+
+  The ROUTE DEFINITION encompasses the entire declaration and configuration of a route.
+  The DEFINITION includes the ROUTE PATH, the HTTP METHOD (GET,POST,PUT,DELETE etc) and the corresponding handler or middleware.
+  The DEFENITION specifies WHAT SHOULD HAPPEN when a REQUEST is recieved that MATCHES the ROUTE PATH and the HTTP METHOD.
+  Typically defined using methods provided by framework such as app.get(), app.post() etc.
+
+  app.get('/users/:id', (req, res) => {
+  // Route handler
+  })
+
+  This is a ROUTE DEFINITION, it contains the HTTP method (.get), the ROUTE PATH ('users/:id') and and the ROUTE HANDLER func
+
+  _<...Route definition>_
+
+_<...Express/Routing>_
+
+_<-Express/StaticFiles>_
+
+- Express has a built-in middleware function, express.static, that serves static files such as image, CSS, JS files etc.
+- The function signature is:
+  **express.static(root, [options])**
+  ^ Where root is the root dir from which assets will be served
+  ^ Options is an object that contains options for the middleware
+  _<...Express/StaticFiles>_
+
+_<...Express>_
