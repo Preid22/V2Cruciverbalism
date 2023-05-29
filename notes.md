@@ -98,7 +98,33 @@ On useEffect: in this context (Game component) useEffect is called to bring in o
 
 &&& VOCAB/GLOSSARY &&&
 
-_<-Express>_
+_<-Require>_(https://nodejs.org/api/modules.html#modules_require_id)
+
+REQUIRE (require('locationName')) is a built in MODULE FUNCTION of Node.js and is the primary means of LOADING MODULES. The require function takes a file path as an argument and returns the exported code from that path. In order to work, the target path must also have it's code exported. Require can import functions, objects, or values defined in other files or modules in the application.
+
+_<...Require>_
+
+_<-__dirname>_
+
+__dirname is a global environment variable that tells you the directory name (ABSOLUTE PATH) of the currently executing module/script/file. When used, __dirname returns the absolute path of the currently executing file.
+
+It is useful for constructing file paths relative to the current modules location. By using '__dirname' as a reference point we are able to ensure that file paths remain consistent regardless of the current working directory
+
+_<-Path>_ (https://nodejs.org/api/path.html#path_path)
+
+PATH is a built in Node.js MODULE that provides a set of functions for manipulating and interacting with file paths. To use PATH it must be IMPORTED using the REQUIRE FUNCTION at the beginning of the script. Once imported PATH provides several methods for working with file paths.
+Some commonly used examples:
+  - path.join(path1,'./path2',[...morePaths])
+    * takes multiple path segments as args and joins them together to RESOLVE RELATIVE PATHS. It takes any number of segments and returns a concatenated path string.
+  - path.resolve(path1,'./path2',[...morePaths])
+    * resolves an absolute path relative to the current working directory (DONT GET THIS NEEDS WORK)
+  - path.dirname(path)
+    * returns the directory name of a path
+  - path.parse(path)
+    * returns an object whose properties represent significant elements of the path
+  * A key benefit to using PATH is that it abstracts platform-specefic differences in file formats, allowing a consistent interface across platforms without having to worry about specific file path formats
+_<...Path>_
+_<-Express.js>_ (https://expressjs.com/en/starter/basic-routing.html)
 
 EXPRESS is a framework that works ontop of Node.js to simplify app and API development. It is primarily used for developing server side applications and APIs. In the context of this project it is being used to set up a server to listen for requests and respond with data. There are other ways to use EXPRESS but I will mostly limit the scope to what I'm using here.
 In this case we are making use of Express' capabilities to:
