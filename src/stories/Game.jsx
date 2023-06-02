@@ -9,9 +9,9 @@ function Game ( /*..props*/ ) {
 
     useEffect(() => {
         const date = '1977-02-02';
-        fetch(`/creategame?date=${date}`).then((res) => {
-            if(res.status === 200){
-                res.json().then(({ data }) => {
+        fetch(`/creategame?date=${date}`).then((response) => {
+            if(response.status === 200){
+                response.json().then(({ data }) => {
                     setGameData(data);
                     setIsLoading(false);
                 })

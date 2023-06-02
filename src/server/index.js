@@ -14,7 +14,7 @@ app.get("/creategame", (req, res) => {
   const { date } = req.query;
   console.log("index.js /creategame endpoint");
   if (date !== undefined) {
-    res.json({ data: getCrosswordData(date) }); // check this out
+    res.json({ data: getCrosswordData(date) }); // .json() dictates that the response will be in JSON format
   }
 });
 
