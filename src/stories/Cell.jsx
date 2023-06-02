@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick }) {
+function Cell({ letter, row, column, gridNums, handleSetFocus }) {
   return (
     <svg>
       <rect
@@ -9,9 +9,9 @@ function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick }) {
         width="40"
         height="40"
         rx='5'
-        stroke={isSelected ? 'blue' : 'yellow'}
+        stroke='blue'
         stroke-width='2'
-        fill= {isBlack ? "black" : "white"}
+        fill= {letter==='.' ? "black" : "white"}
       />
     </svg>
   );
@@ -20,6 +20,7 @@ function Cell({ id, letter, isBlack, isHighlighted, isSelected, handleClick }) {
 export default Cell;
 
 /*
+
 Functional component 'Cell' takes the following props:
     - 'id' (string): Unique identifier for the cell
     - 'letter' (string): The letter displayed in the cell (if any)
@@ -30,3 +31,13 @@ Functional component 'Cell' takes the following props:
 */
 
 //style={{ fill: isBlack ? "black" : "white" }}
+
+/*
+const handleSetFocus = (row, column) => {
+  const newFocus = {
+    row,
+    column,
+  };
+  setFocusCell(newFocus);
+};
+*/

@@ -16,7 +16,7 @@ function puzzleMap(puzzle) {
   p.copyright = puzzle.copyright;
   p.date = puzzle.date;
   p.editor = puzzle.editor;
-  p.cells = generateCells(puzzle.grid, puzzle.size.rows);
+  p.cells = generateCells(puzzle.grid, puzzle.size.rows); //outputs {letter:'', row:'', column:' }
   p.gridnums = puzzle.gridnums;
   p.publisher = puzzle.publisher;
   p.size = puzzle.size;
@@ -53,6 +53,12 @@ function generateClueMap(clues) {
     return letterOb;
     });
     }
+
+    /**
+     In the puzzleMap function, generateCells takes in puzzle.grid as the letters arg and puzzle.size.rows
+     as the the size arg. It then maps over the letters ( .grid ) and returns an object with 
+     the row, column, and letter properties.
+     */
 
 exports.getCrosswordData = getCrosswordData;
 
