@@ -30,3 +30,9 @@ app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
 });
 
+/**
+ This file is the entry point for the server. It listens on port 3000 (or whatever is specified 
+  in process.env.PORT) for a request to the /creategame endpoint. If a /creategame request is
+  made with a date query it will call the getCroswordData function from newGameManager.js and
+  return the data as a JSON object
+ */
