@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cell({ letter, row, column, gridNums, handleSetFocus }) {
+function Cell({ selected }) {
   return (
     <svg>
       <rect
@@ -9,9 +9,9 @@ function Cell({ letter, row, column, gridNums, handleSetFocus }) {
         width="40"
         height="40"
         rx='5'
-        stroke='blue'
+        stroke={selected ? 'blue' : 'yellow'}
         stroke-width='2'
-        fill= {letter==='.' ? "black" : "white"}
+        fill="white"
       />
     </svg>
   );

@@ -68,16 +68,13 @@ Feeling sluggish and unmotivated, not sure if it's the yips of butting up agains
 
 Still a little spun out but in spite of a poor attitude was able to get a little bit of traction. Still circling around components (grid/cells specifically) but I do keep running into overlooked details or things I misunderstood that need to be corrected and expanded on so I don't feel like it's a waste of time, making sure I actually understand. I think a lot of my confusion on the last round was tied up in understanding the interactions between the various objects getting passed around and how that happens. Still feels like I'm pulling at the strings between the server and client side but it does feel like the knot is starting to loosen rather than tighten, so that's good. One major oversight on my part was how the .json() method is applied, from the server side we are creating an object and the JSON-ification turns that into a JSON STRING, on the client side when that string is recieved as a response it gets converted BACK into an OBJECT. Not having a clear understanding of that was causing a great deal of confusion in terms of visualizing how our pieces of data are getting moved. Mental model feels a bit clearer.
 
-
 \*\* 6/17/23
 
 Jumping back in after a bit of distraction. Still circling around the grid and cells. The basic approach will be to map over the appropriate data and render cells accordingly. Simple enough on the surface but the devil is in the details.
 Still need to get cleared up on the structure of the data as it goes through the various levels of JSONification
 Need to firm up functional understanding of passing props and building components (best order to do this in)
 
+!! - On ther SERVER side the res.json() method is converting the OBJECT into a JSON STRING
+!! - On the CLIENT side the response.json() method is converting the JSON STRING back into and OBJECT!
 
-
-
-
-
-
+Still circling around it. Going to push into the Cell and Grid components and how they need to work together. May be confusing things a bit with the addition of Storybook but I think it can all be seperated out. Need to remember to focus on component funtionality before I worry about integrating it into Storybook. May be doing this somewhat in reverse ATM.

@@ -13,7 +13,6 @@ function Game ( /*..props*/ ) {
             if(response.status === 200){
                 response.json().then(({ data }) => {
                     setGameData(data);
-                    setIsLoading(false);
                 })
             }
         })
@@ -23,7 +22,8 @@ function Game ( /*..props*/ ) {
         <div>
             <h2>Boo York Times</h2>
             {!isLoading && (
-                <Cell />
+               <Grid
+                cells = {gameData.cells} />
             )}
         </div>
     );
@@ -31,7 +31,14 @@ function Game ( /*..props*/ ) {
 
 export default Game;
 
-
 /**
- gameData = 
+ * On line 12 the fetch request is made to the server with the /creategame endpoint.
+ * If the server recieves a valid request (has a valid date) it will respond with the relevant
+ crossword data. The res.json() method ensures that the response data object is sent as
+ a JSON string. Within that object, the data property is the returned puzzleObj from the
+ getCrosswordData function. 
+ * If the response status is good, response.json() is called to parse the JSON string and
+ the 'data' property is destructured from the response object. That is then passed to 
+ setGameData to update the gameData state. 
+ * The gameData variable now contains the puzzleObj from the server.
  */

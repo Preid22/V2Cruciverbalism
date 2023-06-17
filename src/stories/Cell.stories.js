@@ -8,17 +8,9 @@ export default {
   component: Cell, //component imported from ln.2
 };
 
-// These are our named Stories (variations on base Story),
-
-// const Template = (args) => <Cell {...args} />;
-// export const Cell1 = Template.bind({});
-
-// ^^^^ Writing it this way throws an unexpected token '<' error
-
 export const Cell1 = {
   args: {
-    isBlack: false,
-    isSelected: false,
+    selected: false,
   },
 };
 
