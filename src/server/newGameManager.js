@@ -1,27 +1,27 @@
 function getCrosswordData(date) {
   const [year, month, day] = date.split("-");
   const puzzle = require(`./Data/crosswords/${year}/${month}/${day}.json`);
-  return puzzleMap(puzzle);
+  return generatePuzzleObj(puzzle);
 }
 
-function puzzleMap(puzzle) {
-  const p = {};
-  p.answers = puzzle.answers;
-  p.author = puzzle.author;
-  p.size = puzzle.size;
-  p.acrossCluesArr = generateClueArray(puzzle.clues.across);
-  p.downCluesArr = generateClueArray(puzzle.clues.down);
-  p.acrossCluesMap = generateClueMap(puzzle.clues.across);
-  p.downCluesMap = generateClueMap(puzzle.clues.down);
-  p.copyright = puzzle.copyright;
-  p.date = puzzle.date;
-  p.editor = puzzle.editor;
-  p.cells = generateCells(puzzle.grid, puzzle.size.rows); //outputs {letter:'', row:'', column:' }
-  p.gridnums = puzzle.gridnums;
-  p.publisher = puzzle.publisher;
-  p.size = puzzle.size;
-  p.title = puzzle.title;
-  return p;
+function generatePuzzleObj(puzzle) {
+  const puzzleObj = {};
+  puzzleObj.author = puzzle.author;
+  puzzleObj.answers = puzzle.answers;
+  puzzleObj.size = puzzle.size;
+  puzzleObj.acrossCluesArr = generateClueArray(puzzle.clues.across);
+  puzzleObj.downCluesArr = generateClueArray(puzzle.clues.down);
+  puzzleObj.acrossCluesMap = generateClueMap(puzzle.clues.across);
+  puzzleObj.downCluesMap = generateClueMap(puzzle.clues.down);
+  puzzleObj.copyright = puzzle.copyright;
+  puzzleObj.date = puzzle.date;
+  puzzleObj.editor = puzzle.editor;
+  puzzleObj.cells = generateCells(puzzle.grid, puzzle.size.rows); //outputs {letter:'', row:'', column:' }
+  puzzleObj.gridnums = puzzle.gridnums;
+  puzzleObj.publisher = puzzle.publisher;
+  puzzleObj.size = puzzle.size;
+  puzzleObj.title = puzzle.title;
+  return puzzleObj;
 }
 
 function generateClueArray(clues) {
