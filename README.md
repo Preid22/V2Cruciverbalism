@@ -73,3 +73,11 @@ Still a little spun out but in spite of a poor attitude was able to get a little
 
 Jumping back in after a bit of distraction. Still circling around the grid and cells. The basic approach will be to map over the appropriate data and render cells accordingly. Simple enough on the surface but the devil is in the details.
 Still need to get cleared up on the structure of the data as it goes through the various levels of JSONification
+Need to firm up functional understanding of passing props and building components (best order to do this in)
+
+
+
+
+
+
+

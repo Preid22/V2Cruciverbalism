@@ -1,4 +1,25 @@
+import React from "react";
+import Grid from "./Grid";
 
+// This is the base Story
+
+export default {
+  title: "Grid",
+  component: Grid, //component imported from ln.2
+};
+
+// These are our named Stories (variations on base Story),
+
+// const Template = (args) => <Cell {...args} />;
+// export const Cell1 = Template.bind({});
+
+// ^^^^ Writing it this way throws an unexpected token '<' error
+
+export const Grid1 = {
+  args: {
+   
+  },
+};
 
 
 
