@@ -67,3 +67,9 @@ Feeling sluggish and unmotivated, not sure if it's the yips of butting up agains
 \*\* 6/2/23
 
 Still a little spun out but in spite of a poor attitude was able to get a little bit of traction. Still circling around components (grid/cells specifically) but I do keep running into overlooked details or things I misunderstood that need to be corrected and expanded on so I don't feel like it's a waste of time, making sure I actually understand. I think a lot of my confusion on the last round was tied up in understanding the interactions between the various objects getting passed around and how that happens. Still feels like I'm pulling at the strings between the server and client side but it does feel like the knot is starting to loosen rather than tighten, so that's good. One major oversight on my part was how the .json() method is applied, from the server side we are creating an object and the JSON-ification turns that into a JSON STRING, on the client side when that string is recieved as a response it gets converted BACK into an OBJECT. Not having a clear understanding of that was causing a great deal of confusion in terms of visualizing how our pieces of data are getting moved. Mental model feels a bit clearer.
+
+
+\*\* 6/17/23
+
+Jumping back in after a bit of distraction. Still circling around the grid and cells. The basic approach will be to map over the appropriate data and render cells accordingly. Simple enough on the surface but the devil is in the details.
+Still need to get cleared up on the structure of the data as it goes through the various levels of JSONification
